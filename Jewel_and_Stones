@@ -1,0 +1,19 @@
+#include<stdbool.h>
+
+int numJewelsInStones(char * j, char * S)
+{
+bool blk[255]={false};
+char* temp;
+for(temp=j; *temp != '\0' ; temp++)
+{
+    blk[*temp]=true;
+}
+temp=S;
+int count=0;
+for(temp; *temp != '\0'; temp++)
+{
+    if(blk[*temp]==true)
+        count++;
+}
+return count;
+}
